@@ -1,0 +1,11 @@
+function sumar(val1, val2) {
+    return val1 + val2;
+}
+
+describe("Test para la funcion sumar.", () => {
+    it("devería la funcion sumar retorna la suma de dos numeros", () => {
+        const resultado = sumar(3, 3);
+        expect(resultado).toBe(6);
+        expect(sumar(2, 3)).toBe(5);
+    });
+});

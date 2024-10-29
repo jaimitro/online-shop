@@ -1,0 +1,78 @@
+@host = http://localhost:3000
+
+GET {{host}}/api/products
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiNjcxZmJkYzhhYzM2YWIwMWIzZjA0NmE4IiwidXN1YXJpb19yb2xlIjoiYWRtaW4iLCJpYXQiOjE3MzAxMzM0NTF9.kgS5BF7bFFZkW01dI-HEbOGjjfD6-FuJT4MUNuGxHls
+
+### POST sobre products
+POST {{host}}/api/products
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiNjcxZmJkYzhhYzM2YWIwMWIzZjA0NmE4IiwidXN1YXJpb19yb2xlIjoiYWRtaW4iLCJpYXQiOjE3MzAxMzM0NTF9.kgS5BF7bFFZkW01dI-HEbOGjjfD6-FuJT4MUNuGxHls
+
+{
+    "name": "prueba",
+    "description": "Mu bonica mu guena",
+    "tags":["prueba","holi","mi tag"],
+    "price": 15.95,
+    "department": "moda",
+    "stock": 150,
+    "available": false
+ 
+}
+
+### PUT sobre products
+PUT {{host}}/api/products/671f5b0a6ff1285fd662097a
+Content-Type: application/json
+
+{
+    "name": "Camisa bombacha cambiada",
+    "description": "Mu bonica mu guena",
+    "price": 15.95,
+    "department": "moda",
+    "stock": 150,
+    "available": false
+}
+
+### DELETE un producto
+DELETE {{host}}/api/products/671f5b0a6ff1285fd662097a
+
+### GET encontrar un producto por id
+GET {{host}}/api/products/671f69d8e544c1bb5a314a07
+
+### GET productos por departamento
+GET {{host}}/api/products/dpt/electronica
+
+### GET productos con available true y stock mayor que 10
+GET {{host}}/api/products/available
+
+### GET productos entre precio min y precio max
+GET {{host}}/api/products/price?min=110&max=120
+
+### PUT añadir productos al carrito porque es editar un usuario
+PUT {{host}}/api/users/add/67209d4de74765410aa3937d
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiNjcxZmJkYzhhYzM2YWIwMWIzZjA0NmE4IiwidXN1YXJpb19yb2xlIjoiYWRtaW4iLCJpYXQiOjE3MzAxMzM0NTF9.kgS5BF7bFFZkW01dI-HEbOGjjfD6-FuJT4MUNuGxHls
+
+###________________________USERS_____________________________
+
+### POST registro usuarios
+POST {{host}}/api/users/register
+Content-Type: application/json
+
+{
+    "username":"Jaime",
+    "email":"jaime@gmail.com",
+    "password":"1234",
+    "role":"admin"
+}
+
+### POST logear usuarios
+POST {{host}}/api/users/login
+Content-Type: application/json
+
+{
+    "email":"jaime@gmail.com",
+    "password":"1234"
+}
+
+### GET ver usuario logeado
+GET {{host}}/api/users/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiNjcxZmJkYzhhYzM2YWIwMWIzZjA0NmE4IiwidXN1YXJpb19yb2xlIjoiYWRtaW4iLCJpYXQiOjE3MzAxMzM0NTF9.kgS5BF7bFFZkW01dI-HEbOGjjfD6-FuJT4MUNuGxHls
